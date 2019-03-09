@@ -14,7 +14,13 @@ const App = () => {
   const fetchUser = async user => {
     const res = await fetch(`https://api.github.com/users/${user}`);
     const data = await res.json();
-    setUsers([...users, data]);
+
+    if (data.message || data.message === 'Not Found') {
+      alert('user not found!');
+      return setUsers([...users]);
+    }
+
+    return setUsers([...users, data]);
   };
 
   return (
