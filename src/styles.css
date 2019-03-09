@@ -15,16 +15,41 @@ h1 {
 }
 
 form {
-  display: block;
+  display: flex;
+  flex-direction: row;
   margin-bottom: 20px;
+  width: 100%;
+}
+
+form button,
+form input {
+  padding: 5px;
+  border: 2px solid #666;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+}
+
+form input {
+  border-right: none;
+}
+
+form button {
+  cursor: pointer;
+  max-width: 80px;
+}
+
+form button:hover {
+  background: #f8ffb1;
 }
 
 .user {
   display: flex;
   flex-direction: row;
-  background: #efefef;
   padding: 10px;
   margin-bottom: 20px;
+  box-shadow: 0 0 10px #e4e4e4;
 }
 
 .user-img,
@@ -47,4 +72,13 @@ form {
   margin: 0;
   margin-bottom: 5px;
   color: #2196f3;
+}
+
+.user-desc b {
+  color: #000;
+}
+
+.user-desc span {
+  margin-bottom: 5px;
+  color: #666;
 }
