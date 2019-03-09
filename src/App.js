@@ -14,8 +14,7 @@ const App = () => {
   const fetchUser = async user => {
     const res = await fetch(`https://api.github.com/users/${user}`);
     const data = await res.json();
-    const newUsers = [...users, data];
-    setUsers(newUsers);
+    setUsers([...users, data]);
   };
 
   return (
