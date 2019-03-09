@@ -14,13 +14,18 @@ const App = () => {
     event.preventDefault();
     setLoading(true);
     fetchUser(user, users, setLoading, setUsers);
+    setUser('');
   };
 
   return (
     <div className="app-container">
       <h1>GitHub Users</h1>
 
-      <UserForm handleFormSubmit={handleFormSubmit} setUser={setUser} />
+      <UserForm
+        handleFormSubmit={handleFormSubmit}
+        user={user}
+        setUser={setUser}
+      />
 
       {loading ? <h3>Loading...</h3> : null}
 

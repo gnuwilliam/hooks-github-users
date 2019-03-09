@@ -8,6 +8,7 @@ const UserForm = props => {
         name="search"
         id="search"
         placeholder="type username"
+        value={props.user}
         onChange={e => props.setUser(e.target.value)}
       />
       <button type="submit">search user</button>
