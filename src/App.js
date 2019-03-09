@@ -3,17 +3,21 @@ import React, { useState } from 'react';
 import User from './components/User';
 
 const App = () => {
+  const [loading, setLoading] = useState(false);
   const [user, setUser] = useState('');
   const [users, setUsers] = useState([]);
 
   const handleFormSubmit = event => {
     event.preventDefault();
+    setLoading(true);
     fetchUser(user);
   };
 
   const fetchUser = async user => {
     const res = await fetch(`https://api.github.com/users/${user}`);
     const data = await res.json();
+
+    setLoading(false);
 
     if (data.message || data.message === 'Not Found') {
       alert('user not found!');
@@ -37,6 +41,8 @@ const App = () => {
         />
         <button type="submit">search user</button>
       </form>
+
+      {loading ? <h3>Loading...</h3> : null}
 
       <div className="users">
         {users.map(user => (
