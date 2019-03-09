@@ -8,7 +8,11 @@ const User = ({ user }) => {
       </div>
 
       <div className="user-desc">
-        <h3>{user.login}</h3>
+        <h3>
+          <a href={user.html_url} target="_blank" rel="noopener noreferrer">
+            {user.login}
+          </a>
+        </h3>
         <span>
           <b>Company:</b> {user.company ? user.company : 'Not provided'}
         </span>

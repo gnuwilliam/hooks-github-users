@@ -68,10 +68,17 @@ form button:hover {
   width: 90px;
 }
 
-.user-desc h3 {
+.user-desc h3,
+.user-desc a {
   margin: 0;
   margin-bottom: 5px;
   color: #2196f3;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.user-desc a:hover {
+  text-decoration: underline;
 }
 
 .user-desc b {
